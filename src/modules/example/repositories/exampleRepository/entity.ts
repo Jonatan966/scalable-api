@@ -2,4 +2,4 @@ interface Example {
   prop: string;
 }
 
-export { Example }
+export { Example };

@@ -1,6 +1,5 @@
+import { IExampleRepository } from '@/example/repositories/exampleRepository';
 import { inject, injectable } from 'tsyringe';
-
-import { IExampleRepository } from '../../repositories/exampleRepository';
 
 @injectable()
 class CreateExampleUseCase {
@@ -9,7 +8,9 @@ class CreateExampleUseCase {
     private exampleRepository: IExampleRepository
   ) {}
 
-  async execute() {}
+  async execute() {
+    return undefined;
+  }
 }
 
 export { CreateExampleUseCase };

@@ -1,8 +1,8 @@
 import 'reflect-metadata';
-import { expect, describe, it, beforeEach } from 'vitest';
 
-import { IExampleRepository } from '../../repositories/exampleRepository';
-import { ExampleRepositoryInMemory } from '../../repositories/exampleRepository/in-memory';
+import { IExampleRepository } from '@/example/repositories/exampleRepository';
+import { ExampleRepositoryInMemory } from '@/example/repositories/exampleRepository/in-memory';
+
 import { CreateExampleUseCase } from './index';
 
 let exampleRepositoryInMemory: IExampleRepository;

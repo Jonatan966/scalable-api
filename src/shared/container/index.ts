@@ -1,8 +1,8 @@
-import { container } from 'tsyringe';
-
 import './providers';
-import { IExampleRepository } from '../../modules/example/repositories/exampleRepository';
-import { ExampleRepository } from '../../modules/example/infra/prisma/repositories/ExampleRepository';
+
+import { ExampleRepository } from '@/example/infra/prisma/repositories/ExampleRepository';
+import { IExampleRepository } from '@/example/repositories/exampleRepository';
+import { container } from 'tsyringe';
 
 container.registerSingleton<IExampleRepository>(
   'ExampleRepository',

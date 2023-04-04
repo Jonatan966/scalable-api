@@ -6,6 +6,7 @@
     "allowJs": true,
     "outDir": "./dist",
     "rootDir": "./src",
+    "baseUrl": "./src",
     "removeComments": true,
     "typeRoots": ["./node_modules/@types", "./src/@types"],
     "esModuleInterop": true,
@@ -13,7 +14,13 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": ["./modules/*"],
+      "@shared/*": ["./shared/*"],
+      "@utils/*": ["./utils/*"],
+      "@config/*": ["./config/*"]
+    }
   },
   "include": ["src/**/*"]
 }

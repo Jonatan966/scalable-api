@@ -13,4 +13,10 @@ export default {
   coverageReporters: ['text-summary', 'lcov'],
   preset: 'ts-jest',
   testMatch: ['**/*.spec.ts'],
+  moduleNameMapper: {
+    '@/(.*)': '<rootDir>/src/modules/$1',
+    '@shared/(.*)': '<rootDir>/src/shared/$1',
+    '@utils/(.*)': '<rootDir>/src/utils/$1',
+    '@config/(.*)': '<rootDir>/src/config/$1',
+  },
 };

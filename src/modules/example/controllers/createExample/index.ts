@@ -1,7 +1,6 @@
+import { CreateExampleUseCase } from '@/example/useCases/createExample';
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
-
-import { CreateExampleUseCase } from '../../useCases/createExample';
 
 class CreateExampleController {
   async handle(request: Request, response: Response): Promise<Response> {

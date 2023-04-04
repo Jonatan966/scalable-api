@@ -48,7 +48,7 @@
       "warn",
       {
         "newlinesBetween": "always",
-        "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
+        "groups": ["module", ["parent", "sibling", "index"]],
         "alphabetize": {
           "order": "asc",
           "ignoreCase": true
@@ -68,7 +68,13 @@
   },
   "settings": {
     "import/resolver": {
-      "typescript": {}
-    }
+      "typescript": {
+        "extensions": [".ts", ".js"]
+      },
+      "node": {
+        "extensions": [".ts", ".js"]
+      }
+    },
+    "import/extensions": 0
   }
 }

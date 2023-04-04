@@ -1,3 +1,3 @@
 const prisma = {};
 
-export { prisma }
+export { prisma };
