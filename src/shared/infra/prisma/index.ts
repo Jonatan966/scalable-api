@@ -1,0 +1,3 @@
+const prisma = {};
+
+export { prisma }
