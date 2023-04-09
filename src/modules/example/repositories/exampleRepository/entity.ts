@@ -1,5 +1,6 @@
 interface Example {
-  prop: string;
+  id: string;
+  name: string;
 }
 
 export { Example };

@@ -3,8 +3,8 @@ import { Router } from 'express';
 
 const exampleRoutes = Router();
 
-const exampleController = new CreateExampleController();
+const createExampleController = new CreateExampleController();
 
-exampleRoutes.get('/', exampleController.handle);
+exampleRoutes.post('/', createExampleController.handle);
 
 export { exampleRoutes };

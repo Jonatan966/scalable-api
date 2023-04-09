@@ -1,5 +1,5 @@
 interface IExampleRepository {
-  create(): Promise<void>;
+  create(name: string): Promise<void>;
 }
 
 export { IExampleRepository };

@@ -4,9 +4,13 @@ import { container } from 'tsyringe';
 
 class CreateExampleController {
   async handle(request: Request, response: Response): Promise<Response> {
+    const { name } = request.body;
+
     const createExampleUseCase = container.resolve(CreateExampleUseCase);
 
-    return response.json({ ok: true });
+    await createExampleUseCase.execute(name);
+
+    return response.sendStatus(201);
   }
 }
 

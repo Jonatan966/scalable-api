@@ -1,14 +1,25 @@
-import { IExampleRepository } from "../../../repositories/exampleRepository";
+import { Prisma } from '@prisma/client';
+import { prisma } from '@shared/infra/prisma';
+import { v4 } from 'uuid';
+
+import { IExampleRepository } from '../../../repositories/exampleRepository';
 
 class ExampleRepository implements IExampleRepository {
-  // private repository;
+  private repository: Prisma.ExampleDelegate<
+    Prisma.RejectOnNotFound | Prisma.RejectPerOperation
+  >;
 
-  // constructor() {
-  //   this.repository = prisma.example;
-  // }
+  constructor() {
+    this.repository = prisma.example;
+  }
 
-  async create(): Promise<void> {
-      
+  async create(name: string): Promise<void> {
+    await this.repository.create({
+      data: {
+        name,
+        id: v4(),
+      },
+    });
   }
 }
 

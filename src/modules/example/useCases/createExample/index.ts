@@ -8,8 +8,8 @@ class CreateExampleUseCase {
     private exampleRepository: IExampleRepository
   ) {}
 
-  async execute() {
-    return undefined;
+  async execute(name: string) {
+    await this.exampleRepository.create(name);
   }
 }
 
