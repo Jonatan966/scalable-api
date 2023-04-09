@@ -1,6 +1,6 @@
 import 'reflect-metadata';
-
 import { ExampleRepositoryInMemory } from '@/example/repositories/exampleRepository/in-memory';
+import { describe, beforeEach, it, expect } from 'vitest';
 
 import { CreateExampleUseCase } from './index';
 
