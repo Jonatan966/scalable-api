@@ -7,7 +7,7 @@ const createExampleScheme = z.object({
   name: z.string().nonempty(),
 });
 
-class CreateExampleController {
+export const createExampleController = {
   async handle(request: Request, response: Response): Promise<Response> {
     const { name } = createExampleScheme.parse(request.body);
 
@@ -15,7 +15,5 @@ class CreateExampleController {
     await createExampleUseCase(name);
 
     return response.sendStatus(201);
-  }
-}
-
-export { CreateExampleController };
+  },
+};
