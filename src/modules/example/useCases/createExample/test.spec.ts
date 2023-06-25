@@ -1,20 +1,19 @@
-import 'reflect-metadata';
-import { ExampleRepositoryInMemory } from '@/example/repositories/exampleRepository/in-memory';
+import { makeExampleRepositoryInMemory } from '@/example/repositories/exampleRepository/in-memory';
 import { describe, beforeEach, it, expect } from 'vitest';
 
-import { CreateExampleUseCase } from './index';
+import { makeCreateExampleUseCase } from './index';
 
-let exampleRepositoryInMemory: ExampleRepositoryInMemory;
-let createExampleUseCase: CreateExampleUseCase;
+let exampleRepositoryInMemory: ReturnType<typeof makeExampleRepositoryInMemory>;
+let createExampleUseCase: ReturnType<typeof makeCreateExampleUseCase>;
 
 describe('Create Example', () => {
   beforeEach(() => {
-    exampleRepositoryInMemory = new ExampleRepositoryInMemory();
-    createExampleUseCase = new CreateExampleUseCase(exampleRepositoryInMemory);
+    exampleRepositoryInMemory = makeExampleRepositoryInMemory();
+    createExampleUseCase = makeCreateExampleUseCase(exampleRepositoryInMemory);
   });
 
   it('should be able to create an example', async () => {
-    await createExampleUseCase.execute('Foo Bar');
+    await createExampleUseCase('Foo Bar');
 
     expect(exampleRepositoryInMemory.examples.length).toBe(1);
     expect(exampleRepositoryInMemory.examples[0]).toHaveProperty(
