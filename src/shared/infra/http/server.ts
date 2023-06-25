@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import 'dotenv/config';
 import express from 'express';
 import 'express-async-errors';
@@ -6,7 +5,6 @@ import 'express-async-errors';
 import { parseErrors } from './middlewares/parseErrors';
 import rateLimiter from './middlewares/rateLimiter';
 import { router } from './routes';
-import '../../container';
 
 const app = express();
 
