@@ -1,9 +1,12 @@
-import { makeExampleRepositoryInMemory } from '@/example/repositories/exampleRepository/in-memory';
+import {
+  IExampleRepositoryInMemory,
+  makeExampleRepositoryInMemory,
+} from '@/example/repositories/exampleRepository/in-memory';
 import { describe, beforeEach, it, expect } from 'vitest';
 
 import { makeCreateExampleUseCase } from './index';
 
-let exampleRepositoryInMemory: ReturnType<typeof makeExampleRepositoryInMemory>;
+let exampleRepositoryInMemory: IExampleRepositoryInMemory;
 let createExampleUseCase: ReturnType<typeof makeCreateExampleUseCase>;
 
 describe('Create Example', () => {
