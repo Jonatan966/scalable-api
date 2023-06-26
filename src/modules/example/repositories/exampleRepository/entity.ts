@@ -1,6 +1,6 @@
-interface Example {
+interface IExample {
   id: string;
   name: string;
 }
 
-export { Example };
+export { IExample };

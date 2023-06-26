@@ -1,14 +1,14 @@
 import { v4 } from 'uuid';
 
-import { Example } from './entity';
+import { IExample } from './entity';
 import { IExampleRepository } from './index';
 
 export interface IExampleRepositoryInMemory extends IExampleRepository {
-  examples: Example[];
+  examples: IExample[];
 }
 
 export function makeExampleRepositoryInMemory(): IExampleRepositoryInMemory {
-  const examples: Example[] = [];
+  const examples: IExample[] = [];
 
   return {
     examples,
